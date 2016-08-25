@@ -118,6 +118,17 @@ auto fromQStringList(const QStringList &list)
 
 }
 
+/*!
+    \class QMapboxGLSettings
+    \brief The QMapboxGLSettings stores the initial configuration for a QMapboxGL.
+
+    \inmodule Mapbox Qt SDK
+
+    QMapboxGLSettings is used to configure a QMapboxGL at the moment of its creation.
+    Once created, the QMapboxGLSettings of a QMapboxGL can no longer be changed.
+
+    \since 4.7
+*/
 QMapboxGLSettings::QMapboxGLSettings()
     : m_mapMode(QMapboxGLSettings::ContinuousMap)
     , m_contextMode(QMapboxGLSettings::SharedGLContext)
@@ -209,6 +220,19 @@ void QMapboxGLSettings::setAccessToken(const QString &token)
     m_accessToken = token;
 }
 
+/*!
+    \class QMapboxGL
+    \brief The QMapboxGL class is a Qt wrapper for the Mapbox GL Native engine.
+
+    \inmodule Mapbox Qt SDK
+
+    QMapboxGL is a Qt friendly version the Mapbox GL Native engine using Qt types
+    and deep integration with Qt event loop. QMapboxGL relies as much as possible
+    on Qt, trying to minimize the external dependencies. For instance it will use
+    QNetworkAccessManager for HTTP requests and QString for UTF-8 manipulation.
+
+    \since 4.7
+*/
 QMapboxGL::QMapboxGL(QObject *parent_, const QMapboxGLSettings &settings)
     : QObject(parent_)
 {
